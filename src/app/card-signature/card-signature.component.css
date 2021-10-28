@@ -14,6 +14,11 @@
 .ng-signature-card-header {
   padding: 15px 20px;
 }
+.ng-signature-card-navbar {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+}
 .ng-signature-card-body {
   position: relative;
   padding: 15px 20px;
@@ -52,4 +57,30 @@
 .border-primary {
   border-color: #5c83e1;
   color: #5c83e1;
+}
+.ng-signature-select-color {
+  display: flex;
+  align-items: center;
+}
+.ng-radio-btn {
+  width: 15px;
+  height: 15px;
+  display: flex;
+  margin-left: 5px;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid;
+}
+.ng-radio-btn .checkmark {
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 50%;
+}
+.ng-radio-btn input {
+  display: none;
+}
+.ng-radio-btn input:checked + .checkmark {
+  display: inline-block;
 }

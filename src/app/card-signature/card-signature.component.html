@@ -2,6 +2,20 @@
   <div class="ng-signature-card-header">
     <h2>Signature</h2>
   </div>
+  <div class="ng-signature-card-navbar">
+    <span class="spacer"></span>
+    <div class="ng-signature-select-color">
+      <label
+        *ngFor="let color of options.pencilColors; let i = index"
+        [ngStyle]="{ 'border-color': color }"
+        class="ng-radio-btn border-danger"
+        (click)="changeColor(color)"
+      >
+        <input type="radio" name="color" [checked]="i < 1">
+        <span class="checkmark bg-danger" [ngStyle]="{ 'background-color': color }"></span>
+      </label>
+    </div>
+  </div>
   <div class="ng-signature-card-body">
     <canvas
       class="ng-canva-digital-signature"

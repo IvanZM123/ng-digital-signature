@@ -1,4 +1,3 @@
-import { ThisReceiver } from '@angular/compiler';
 import { AfterContentInit, Component, Input, OnInit, AfterContentChecked } from '@angular/core';
 import SignaturePad from 'signature_pad';
 
@@ -8,9 +7,10 @@ export interface FileMimeType {
 }
 
 export interface SignatureOptions {
+  pencilColors: string[];
   showControls: boolean;
   types: FileMimeType[];
-  penThickness: number;
+  pencilThickness: number;
   background: string;
   color: string;
   label: string;
@@ -30,14 +30,15 @@ export class CardSignatureComponent implements OnInit, AfterContentInit {
   constructor() {
     this.options = {
       showControls: false,
-      penThickness: 0.5,
+      pencilThickness: 0.5,
       background: "rgba(0, 0, 0, 0.05)",
       color: "black",
       types: [
         { extension: "jpg" },
         { extension: "png" },
         { extension: "svg", contentType: "svg+xml" }
-      ]
+      ],
+      pencilColors: ["black", "#5c83e1"]
     }
   }
 
@@ -50,7 +51,7 @@ export class CardSignatureComponent implements OnInit, AfterContentInit {
 
     this.signaturePad = new SignaturePad(this.canvaHTML, {
       penColor: this.options.color,
-      minWidth: this.options.penThickness,
+      minWidth: this.options.pencilThickness,
       backgroundColor: this.options.background
     });
 
@@ -78,6 +79,10 @@ export class CardSignatureComponent implements OnInit, AfterContentInit {
     a.href = data;
 
     a.click();
+  }
+
+  changeColor(color: string): void {
+    this.signaturePad.penColor = color;
   }
 
   private resize(): void {
