@@ -1,4 +1,5 @@
-import { AfterContentInit, Component, Input, OnInit, AfterContentChecked } from '@angular/core';
+import { AfterContentInit, Component, Input, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import SignaturePad from 'signature_pad';
 
 export interface FileMimeType {
@@ -7,10 +8,12 @@ export interface FileMimeType {
 }
 
 export interface SignatureOptions {
+  pencilThickness: number;
+  secondaryColor: string;
   pencilColors: string[];
   showControls: boolean;
   types: FileMimeType[];
-  pencilThickness: number;
+  primaryColor: string;
   background: string;
   color: string;
   label: string;
@@ -22,14 +25,17 @@ export interface SignatureOptions {
   styleUrls: ['./card-signature.component.css']
 })
 export class CardSignatureComponent implements OnInit, AfterContentInit {
-  @Input() readonly options!: Partial<SignatureOptions>;
+  @Input() readonly options: Partial<SignatureOptions>;
 
+  format: FormControl = new FormControl("", [Validators.required])
   private canvaHTML!: HTMLCanvasElement;
   private signaturePad!: SignaturePad;
 
   constructor() {
     this.options = {
       showControls: false,
+      primaryColor: "white",
+      secondaryColor: "blue",
       pencilThickness: 0.5,
       background: "rgba(0, 0, 0, 0.05)",
       color: "black",
@@ -38,7 +44,7 @@ export class CardSignatureComponent implements OnInit, AfterContentInit {
         { extension: "png" },
         { extension: "svg", contentType: "svg+xml" }
       ],
-      pencilColors: ["black", "#5c83e1"]
+      pencilColors: ["black", "#5c83e1", "red"]
     }
   }
 

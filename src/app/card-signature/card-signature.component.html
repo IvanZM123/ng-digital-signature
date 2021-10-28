@@ -1,31 +1,59 @@
 <div class="ng-signature-card" style="width: auto;">
   <div class="ng-signature-card-header">
-    <h2>Signature</h2>
+      <img
+        src="https://cdn-icons.flaticon.com/png/512/2704/premium/2704398.png?token=exp=1635397262~hmac=3fab4edbb9a6e2f300d152458a887235"
+        height="50px"
+        width="50px"
+        alt="Logo"
+      >
+    <h2 [ngStyle]="{color: options.secondaryColor}">Banco Promerica</h2>
   </div>
   <div class="ng-signature-card-navbar">
+    <div>
+    <select
+        [ngStyle]="{color: options.secondaryColor}"
+        [formControl]="format"
+    >
+      <option value="" selected>Choose format</option>
+      <option *ngFor="let item of options.types" [ngValue]="item">
+        {{ item.extension | uppercase }}
+      </option>
+    </select>
+    </div>
     <span class="spacer"></span>
     <div class="ng-signature-select-color">
-      <label
+    <label
         *ngFor="let color of options.pencilColors; let i = index"
         [ngStyle]="{ 'border-color': color }"
         class="ng-radio-btn border-danger"
         (click)="changeColor(color)"
-      >
+    >
         <input type="radio" name="color" [checked]="i < 1">
         <span class="checkmark bg-danger" [ngStyle]="{ 'background-color': color }"></span>
-      </label>
+    </label>
     </div>
   </div>
   <div class="ng-signature-card-body">
     <canvas
-      class="ng-canva-digital-signature"
-      width="400px"
-      height="200px"
+    class="ng-canva-digital-signature"
+    width="400px"
+    height="200px"
     ></canvas>
   </div>
   <div class="ng-signature-card-footer">
     <span class="spacer"></span>
-    <button (click)="clear()" class="btn btn-outlined border-primary">Cancel</button>
-    <button class="btn btn-solid bg-primary">Accept</button>
+    <button
+        (click)="clear()"
+        class="btn btn-outlined"
+        [ngStyle]="{
+        'border-color': options.secondaryColor,
+        'color': options.secondaryColor
+        }"
+    >Cancel</button>
+    <button
+    [disabled]="format.invalid"
+    class="btn btn-solid bg-primary"
+    (click)="download(format.value)"
+    >Accept and continue</button>
   </div>
 </div>

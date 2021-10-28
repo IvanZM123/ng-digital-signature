@@ -4,7 +4,8 @@
   padding: 0px;
 }
 .ng-signature-card h2 {
-  font-weight: 100;
+  font-weight: 400;
+  margin-left: 10px;
 }
 .ng-signature-card {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
@@ -12,7 +13,9 @@
   display: inline-block;
 }
 .ng-signature-card-header {
+  display: flex;
   padding: 15px 20px;
+  align-items: center;
 }
 .ng-signature-card-navbar {
   padding: 15px 20px;
@@ -44,7 +47,7 @@
   font-size: 18px;
   background: none;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 10px 15px;
   margin: 0px 7px;
 }
 .btn-outlined {
@@ -63,8 +66,8 @@
   align-items: center;
 }
 .ng-radio-btn {
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   display: flex;
   margin-left: 5px;
   border-radius: 50%;
@@ -83,4 +86,20 @@
 }
 .ng-radio-btn input:checked + .checkmark {
   display: inline-block;
+}
+select {
+  border: none;
+  padding: 10px;
+  outline: none;
+  font-size: 18px;
+  border-bottom: 2px solid;
+  background: transparent;
+  background-color: transparent;
+}
+select option {
+  padding: 10px;
+  margin: 10px;
+  display: inline-block;
+  background: transparent;
+  background-color: transparent;
 }
