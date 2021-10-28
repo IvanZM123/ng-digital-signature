@@ -20,7 +20,7 @@ const options: Partial<SignatureOptions> = {
 }
 
 @Component({
-  selector: 'lib-ngx-digital-signature',
+  selector: 'ngx-digital-signature',
   templateUrl: "./ngx-digital-signature.component.html",
   styleUrls: ["./ngx-digital-signature.component.css"]
 })
