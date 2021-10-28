@@ -1,27 +1,108 @@
-# NgDigitalSignature
+# ngx-digital-signature
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.11.
+This is an angular library, which allows you to enter and download digital signatures in different formats. Whether `jpg`, `png`, `jpeg`, `svg` and more.
 
-## Development server
+# Install dependency.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Generate a new project with angular-cli
 
-## Code scaffolding
+`ng new app`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Install the dependency.
 
-## Build
+`npm i ngx-digital-signature`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Get started.
 
-## Running unit tests
+Add the following content in the `app.module.ts` file.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```ts
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-## Running end-to-end tests
+// Import library ❤️
+import { NgxDigitalSignatureModule } from 'ngx-digital-signature';
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+import { AppComponent } from './app.component';
 
-## Further help
+@NgModule({
+  declarations: [
+    AppComponent,
+  ],
+  imports: [
+    BrowserModule,
+    // Add library to start 🚀
+    NgxDigitalSignatureModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {}
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+
+Now, add the component to `app.component.html`
+
+```html
+<ngx-digital-signature [options]="{...}"></ngx-digital-signature>
+```
+
+Ready, you can add your signatures.
+
+# Documentation.
+
+In this section you will find all the properties and functionalities of the library.
+
+## Properties.
+
+### header.
+
+This is an object that corresponds to the header of the component, here you can add the logo of your company or app (in String format), and also a title (in String format). For default is `undefinded`
+
+### pencilThickness.
+
+This corresponds to the thickness of the pencil (in Number format). For default is `0.5`
+
+### primaryColor.
+
+This is the primary color of the component, this color is added to the card in general (in String format). For default is `#ffffff`
+
+### secondaryColor.
+
+Add a secondary color to the component, this is reflected in buttons, letters, etc (in String format). For default is `#5c83e1`
+
+### pencilColors.
+
+Sets all the pencil colors (in Array<String> format). For default ["black", "#5c83e1"]
+
+### types.
+
+Sets all available image formats (in Array<string> format). For default.
+
+```ts
+[
+  { extension: "jpg" },
+  { extension: "png" },
+  { extension: "svg", contentType: "svg+xml" }
+]
+```
+
+### canvasHeight.
+
+Sets the height of the canvas (in Number format). For default is `200`
+
+### canvasWidth.
+
+Sets the width of the canvas (in Number format). For default is `400`
+
+### background.
+
+Add a background to the canvas (in String format). For default is `rgba(0, 0, 0, 0.05)`
+
+### color.
+
+Set the color of the pencil (in String format). For default is `black`
+
+### label.
+
+Add a short description below the canvas (in String format). For default is `undefined`
