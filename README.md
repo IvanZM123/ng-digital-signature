@@ -75,7 +75,7 @@ Add a secondary color to the component, this is reflected in buttons, letters, e
 
 ### pencilColors.
 
-Sets all the pencil colors (in Array<String> format). For default ["black", "#5c83e1"]
+Sets all the pencil colors (in Array<String> format). For default `["black", "#5c83e1"]`
 
 ### types.
 
