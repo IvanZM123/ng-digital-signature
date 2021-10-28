@@ -1,12 +1,13 @@
-<div class="ng-signature-card" style="width: auto;">
-  <div class="ng-signature-card-header">
+<div class="ng-signature-card" [ngStyle]="{ 'background-color': options.primaryColor }">
+  <div *ngIf="options.header" class="ng-signature-card-header">
       <img
-        src="https://cdn-icons.flaticon.com/png/512/2704/premium/2704398.png?token=exp=1635397262~hmac=3fab4edbb9a6e2f300d152458a887235"
+        *ngIf="options.header?.logo"
+        [src]="options.header?.logo"
         height="50px"
         width="50px"
         alt="Logo"
       >
-    <h2 [ngStyle]="{color: options.secondaryColor}">Banco Promerica</h2>
+    <h2 [ngStyle]="{color: options.secondaryColor}">{{ options.header?.title }}</h2>
   </div>
   <div class="ng-signature-card-navbar">
     <div>
@@ -35,10 +36,11 @@
   </div>
   <div class="ng-signature-card-body">
     <canvas
-    class="ng-canva-digital-signature"
-    width="400px"
-    height="200px"
+      class="ng-canva-digital-signature"
+      [height]="options.canvasHeight"
+      [width]="options.canvasWidth"
     ></canvas>
+    <p *ngIf="options.label" class="text-canvas">{{ options.label }}</p>
   </div>
   <div class="ng-signature-card-footer">
     <span class="spacer"></span>
@@ -52,7 +54,11 @@
     >Cancel</button>
     <button
     [disabled]="format.invalid"
-    class="btn btn-solid bg-primary"
+    class="btn btn-solid"
+    [ngStyle]="{
+      'background-color': options.secondaryColor,
+      'color': 'white'
+    }"
     (click)="download(format.value)"
     >Accept and continue</button>
   </div>

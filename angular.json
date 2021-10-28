@@ -103,6 +103,37 @@
           }
         }
       }
+    },
+    "ngx-digital-signature": {
+      "projectType": "library",
+      "root": "projects/ngx-digital-signature",
+      "sourceRoot": "projects/ngx-digital-signature/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-digital-signature/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-digital-signature/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-digital-signature/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-digital-signature/src/test.ts",
+            "tsConfig": "projects/ngx-digital-signature/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-digital-signature/karma.conf.js"
+          }
+        }
+      }
     }
   },
   "defaultProject": "ng-digital-signature"

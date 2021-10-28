@@ -1,7 +1,6 @@
-import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import SignaturePad from 'signature_pad';
-
+import { Component, Input, OnInit } from '@angular/core';
+import { FormControl, Validators } from "@angular/forms";
+import SignaturePad from "signature_pad";
 import { SignatureOptions, FileMimeType } from "./declarations";
 
 const options: Partial<SignatureOptions> = {
@@ -21,11 +20,11 @@ const options: Partial<SignatureOptions> = {
 }
 
 @Component({
-  selector: 'app-card-signature',
-  templateUrl: './card-signature.component.html',
-  styleUrls: ['./card-signature.component.css']
+  selector: 'lib-ngx-digital-signature',
+  templateUrl: "./ngx-digital-signature.component.html",
+  styleUrls: ["./ngx-digital-signature.component.css"]
 })
-export class CardSignatureComponent implements OnInit, AfterViewInit {
+export class NgxDigitalSignatureComponent implements OnInit {
   @Input() options!: Partial<SignatureOptions>;
 
   format: FormControl = new FormControl("", [Validators.required]);

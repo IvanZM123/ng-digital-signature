@@ -1,0 +1,16 @@
+{
+  "name": "ngx-digital-signature",
+  "version": "0.1.0",
+  "author": {
+    "name": "Ivan Zaldivar",
+    "email": "ivanzaldivar16@gmail.com",
+    "url": "https://github.com/IvanZM123"
+  },
+  "peerDependencies": {
+    "@angular/common": "^12.2.0",
+    "@angular/core": "^12.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  }
+}
