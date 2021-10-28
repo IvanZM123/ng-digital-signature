@@ -1,6 +1,8 @@
-# ngx-digital-signature
+![banner](https://user-images.githubusercontent.com/64434514/139320917-f173e512-88fc-40c9-97ee-f78269baea2b.png)
 
-This is an angular library, which allows you to enter and download digital signatures in different formats. Whether `jpg`, `png`, `jpeg`, `svg` and more.
+# A library that allows you to signatures
+
+ngx-digital-signature. This is an angular library, which allows you to enter and download digital signatures in different formats. Whether `jpg`, `png`, `jpeg`, `svg` and more.
 
 # Install dependency.
 
