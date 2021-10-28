@@ -1,0 +1,55 @@
+* {
+  font-family: system-ui, sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+.ng-signature-card h2 {
+  font-weight: 100;
+}
+.ng-signature-card {
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  display: inline-block;
+}
+.ng-signature-card-header {
+  padding: 15px 20px;
+}
+.ng-signature-card-body {
+  position: relative;
+  padding: 15px 20px;
+}
+.ng-canva-digital-signature {
+  top: 0;
+  bottom: 0px;
+  width: 400px;
+  height: 200px;
+  border-radius: 20px;
+}
+.ng-signature-card-footer {
+  padding: 10px 20px 25px 0px;
+  display: flex;
+  align-items: center;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.btn-solid, .btn-outlined {
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  background: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin: 0px 7px;
+}
+.btn-outlined {
+  border: 1px solid;
+}
+.bg-primary {
+  background-color: #5c83e1;
+  color: white;
+}
+.border-primary {
+  border-color: #5c83e1;
+  color: #5c83e1;
+}
