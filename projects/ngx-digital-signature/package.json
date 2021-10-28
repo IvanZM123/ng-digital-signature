@@ -1,6 +1,6 @@
 {
   "name": "ngx-digital-signature",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": {
     "name": "Ivan Zaldivar",
     "email": "ivanzaldivar16@gmail.com",
@@ -14,6 +14,7 @@
     "@angular/core": "^12.2.0"
   },
   "dependencies": {
+    "signature_pad": "^3.0.0-beta.4",
     "tslib": "^2.3.0"
   }
 }

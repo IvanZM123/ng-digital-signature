@@ -6,5 +6,6 @@
     "umdModuleIds": {
       "signature_pad": "signature_pad"
     }
-  }
+  },
+  "allowedNonPeerDependencies": ["signature_pad"]
 }
