@@ -1,4 +1,4 @@
-![banner](https://user-images.githubusercontent.com/64434514/139320917-f173e512-88fc-40c9-97ee-f78269baea2b.png)
+![ngx-digital-signature banner](https://user-images.githubusercontent.com/64434514/139567442-7fb36b0f-8580-4768-8c6c-7cdcd45a8158.png)
 
 # A library that allows you to signatures
 
