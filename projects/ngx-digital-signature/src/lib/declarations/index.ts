@@ -62,4 +62,16 @@ export interface SignatureOptions {
    * Add a short description.
    */
   label: string;
+  /**
+   * Component elevation.
+   */
+  elevation: boolean;
+  /**
+   * Button text to save.
+   */
+  btnSaveText: string;
+  /**
+   * Button text to cancel.
+   */
+  btnCancelText: string;
 }

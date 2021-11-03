@@ -1,11 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, AfterViewInit } from '@angular/core';
 import { FormControl, Validators } from "@angular/forms";
 import SignaturePad from "signature_pad";
 import { SignatureOptions, FileMimeType } from "./declarations";
 
 const options: Partial<SignatureOptions> = {
   background: "rgba(0, 0, 0, 0.05)",
-  secondaryColor: "#5c83e1",
+  secondaryColor: "primary",
   primaryColor: "#ffffff",
   pencilThickness: 0.5,
   canvasHeight: 200,
@@ -24,7 +24,7 @@ const options: Partial<SignatureOptions> = {
   templateUrl: "./ngx-digital-signature.component.html",
   styleUrls: ["./ngx-digital-signature.component.css"]
 })
-export class NgxDigitalSignatureComponent implements OnInit {
+export class NgxDigitalSignatureComponent implements OnInit, AfterViewInit {
   @Input() options!: Partial<SignatureOptions>;
 
   format: FormControl = new FormControl("", [Validators.required]);
@@ -75,13 +75,6 @@ export class NgxDigitalSignatureComponent implements OnInit {
   }
 
   private resize(): void {
-    const ratio: number = Math.max(window.devicePixelRatio || 1, 1);
-
-    const canvas = document.querySelector(".ng-canva-digital-signature") as HTMLCanvasElement;
-    canvas.height = canvas.offsetHeight * ratio;
-    canvas.width = canvas.offsetWidth * ratio;
-    canvas.getContext("2d")?.scale(ratio, ratio);
-
     this.signaturePad.clear();
   }
 

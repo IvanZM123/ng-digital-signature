@@ -1,40 +1,74 @@
-<div class="ng-signature-card" [ngStyle]="{ 'background-color': options.primaryColor }">
+<div
+  class="
+    ng-signature-card
+    bg-{{options.primaryColor}}
+    {{ options?.elevation ? 'shadow' : '' }}
+  ">
     <div *ngIf="options.header" class="ng-signature-card-header">
-        <img *ngIf="options.header?.logo" [src]="options.header?.logo" height="50px" width="50px" alt="Logo">
-        <h2 [ngStyle]="{color: options.secondaryColor}">{{ options.header?.title }}</h2>
+        <img
+          *ngIf="options.header?.logo"
+          [src]="options.header?.logo"
+          height="50px"
+          width="50px"
+          alt="Logo"
+        >
+        <h2 class="text-{{options.secondaryColor}}">
+          {{ options.header?.title }}
+        </h2>
     </div>
     <div class="ng-signature-card-navbar">
         <div>
-            <select [ngStyle]="{color: options.secondaryColor}" [formControl]="format">
+            <select
+              class="text-{{options.secondaryColor}}"
+              [formControl]="format"
+            >
                 <option value="" selected>Choose format</option>
-                <option *ngFor="let item of options.types" [ngValue]="item">
-                    {{ item.extension | uppercase }}
-                </option>
+                <option
+                  *ngFor="let item of options.types; let i = index"
+                  [ngValue]="item"
+                >{{ item.extension | uppercase }}</option>
             </select>
         </div>
         <span class="spacer"></span>
         <div class="ng-signature-select-color">
-            <label *ngFor="let color of options.pencilColors; let i = index" [ngStyle]="{ 'border-color': color }"
-                class="ng-radio-btn border-danger" (click)="changeColor(color)">
-                <input type="radio" name="color" [checked]="i < 1">
-                <span class="checkmark bg-danger" [ngStyle]="{ 'background-color': color }"></span>
+            <label
+              *ngFor="let color of options.pencilColors; let i = index"
+              [ngStyle]="{ 'border-color': color }"
+              class="ng-radio-btn border-danger"
+              (click)="changeColor(color)"
+            >
+              <input type="radio" name="color" [checked]="i < 1">
+              <span class="checkmark" [ngStyle]="{ 'background-color': color }"></span>
             </label>
         </div>
     </div>
     <div class="ng-signature-card-body">
-        <canvas class="ng-canva-digital-signature" [height]="options.canvasHeight"
-            [width]="options.canvasWidth"></canvas>
-        <p *ngIf="options.label" class="text-canvas">{{ options.label }}</p>
+        <canvas
+          class="ng-canva-digital-signature"
+          [height]="options.canvasHeight"
+          [width]="options.canvasWidth"
+        ></canvas>
+        <p
+          *ngIf="options.label"
+          class="text-grey"
+        >{{ options.label }}</p>
     </div>
     <div class="ng-signature-card-footer">
         <span class="spacer"></span>
-        <button (click)="clear()" class="btn btn-outlined" [ngStyle]="{
-          'border-color': options.secondaryColor,
-          'color': options.secondaryColor
-          }">Cancel</button>
-        <button [disabled]="format.invalid" class="btn btn-solid" [ngStyle]="{
-        'background-color': options.secondaryColor,
-        'color': 'white'
-      }" (click)="download(format.value)">Accept and continue</button>
+        <button
+          (click)="clear()"
+          class="
+            btn
+            btn-outlined
+            text-{{options.secondaryColor}}
+            border-{{options.secondaryColor}}
+          "
+        >{{ options.btnCancelText || "Cancel" }}</button>
+        <button
+          [disabled]="format.invalid"
+          type="button"
+          class="btn btn-solid bg-{{options.secondaryColor}}"
+          (click)="download(format.value)"
+        >{{ options.btnSaveText || "Accept" }}</button>
     </div>
 </div>

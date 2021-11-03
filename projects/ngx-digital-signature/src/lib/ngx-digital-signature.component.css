@@ -1,8 +1,10 @@
+/* Generals */
 * {
   font-family: system-ui, sans-serif;
   margin: 0px;
   padding: 0px;
 }
+/* Components */
 .ng-signature-card h2 {
   font-weight: 400;
   margin-left: 10px;
@@ -10,6 +12,8 @@
 .ng-signature-card {
   border-radius: 20px;
   display: inline-block;
+}
+.shadow {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
 }
 .ng-signature-card-header,
@@ -37,6 +41,7 @@
 .spacer {
   flex: 1 1 auto;
 }
+/* Buttons */
 .btn-solid, .btn-outlined {
   border: none;
   cursor: pointer;
@@ -49,13 +54,8 @@
 .btn-outlined {
   border: 1px solid;
 }
-.bg-primary {
-  background-color: #5c83e1;
-  color: white;
-}
-.border-primary {
-  border-color: #5c83e1;
-  color: #5c83e1;
+button:disabled {
+  opacity:0.5;
 }
 .ng-radio-btn {
   width: 10px;
@@ -64,9 +64,6 @@
   border-radius: 50%;
   justify-content: center;
   border: 2px solid;
-}
-.text-canvas {
-  color: #B6B2B2;
 }
 .ng-radio-btn .checkmark {
   width: 100%;
@@ -95,4 +92,18 @@ select option {
   display: inline-block;
   background: transparent;
   background-color: transparent;
+}
+/* Colors */
+.bg-primary {
+  background-color: #5c83e1;
+  color: white;
+}
+.text-primary {
+  color: #5c83e1;
+}
+.border-primary {
+  border-color: #5c83e1;
+}
+.text-grey {
+  color: #B6B2B2;
 }
